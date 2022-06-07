@@ -1,0 +1,19 @@
+@Sadiya
+
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std;
+ll binPow(ll b, ll p, ll mod){
+    if(p==0)    return 1;
+    ll x = binPow(b, p/2, mod);
+    if(p&1) return (((x*x)%mod)*b)%mod;
+    else    return (x*x)%mod;
+}
+int main(){
+    ios_base::sync_with_stdio(false);
+    cin.tie(0);     cout.tie(0);
+    ll b=10,n,m;
+    cin>>n>>m;
+    cout<<binPow(10, n, m*m)/m<<"\n";
+    return 0;
+}
